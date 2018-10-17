@@ -1,0 +1,13 @@
+@import 'settings';
+@import 'mixins';
+
+.nl-header, .nl-content, .nl-footer{
+  @import 'reset';
+  font-family: $ubuntu;
+  font-weight: 300;
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+@import "../../components/header/_header.scss";
