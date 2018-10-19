@@ -1,12 +1,12 @@
 .main-banner{
   .banner-slider {
-    height: 430px;
     overflow: hidden;
     .banner-slider-item{
       position: relative;
     }
-    img {
-
+    .banner-picture {
+background: no-repeat url("img/banner.png") center;
+      height: 430px;
     }
     .banner-info{
       position: absolute;
