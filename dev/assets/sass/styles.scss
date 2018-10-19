@@ -1,7 +1,10 @@
 @import 'settings';
 @import 'mixins';
-
-.nl-header, .nl-content, .nl-footer{
+body{
+  padding: 0;
+  margin: 0;
+}
+.nl-header, .main-menu-section, .nl-content, .nl-footer{
   @import 'reset';
   font-family: $ubuntu;
   font-weight: 300;
@@ -11,3 +14,4 @@
   }
 }
 @import "../../components/header/_header.scss";
+@import "../../components/mainmenu/_mainmenu.scss";
