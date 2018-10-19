@@ -1,0 +1,65 @@
+.main-banner{
+  .banner-slider {
+    height: 430px;
+    overflow: hidden;
+    .banner-slider-item{
+      position: relative;
+    }
+    img {
+
+    }
+    .banner-info{
+      position: absolute;
+      top: 43px;
+      left: 52%;
+      color: white;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    .banner-text{
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 61px;
+      span{
+        font-size: 90px;
+        padding-right: 13px;
+        line-height: 77px;
+      }
+    }
+    .banner-btn{
+      width: 175px;
+      height: 35px;
+      background-color: $darkgreen;
+      text-transform: uppercase;
+      color: white;
+      font-size: 18.62px;
+      border-radius: 5px;
+      margin-top: 35px;
+      margin-right: 25px;
+    }
+  }
+}
+.banner-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 11%;
+  li {
+    display: inline-block;
+    margin-right: 9px;
+  button{
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid white;
+  }
+    &:last-child{
+      margin-right: 0;
+    }
+    &.slick-active{
+      button{
+        background-color: white;
+      }
+    }
+  }
+}
