@@ -9,13 +9,18 @@
       font-size: 13.72px;
       display: inline-block;
       vertical-align: middle;
-      width: 16.599%;
+      width: 16.66666666666667%;
+      overflow: hidden;
+      box-sizing: border-box;
       text-align: center;
       .menu-icon{
         display: inline-block;
         vertical-align: middle;
+        margin-right: 5px;
         width: 20px;
-        margin-right: 28px;
+        @include media($width-sm){
+          margin-right: 28px;
+        }
         .white-line{
           height: 3px;
           background-color: white;
