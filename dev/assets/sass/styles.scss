@@ -1,11 +1,7 @@
 @import 'settings';
 @import 'mixins';
 @import 'slick';
-body{
-  padding: 0;
-  margin: 0;
-}
-.nl-header, .main-banner, .main-menu-section, .nl-content, .nl-footer{
+.nl-mainpage{
   @import 'reset';
   font-family: $ubuntu;
   font-weight: 300;
@@ -13,8 +9,12 @@ body{
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2%;
+    @include media($width-max){
+      padding: 0;
+    }
   }
+  @import "../../components/header/_header.scss";
+  @import "../../components/mainmenu/_mainmenu.scss";
+  @import "../../components/mainbanner/_mainbanner.scss";
+  @import "../../components/secondcatalog/_secondcatalog.scss";
 }
-@import "../../components/header/_header.scss";
-@import "../../components/mainmenu/_mainmenu.scss";
-@import "../../components/mainbanner/_mainbanner.scss";
