@@ -43,7 +43,6 @@ $(function () {
         prevArrow: '<div type="button" class="stock-slick-prev"></div>',
         nextArrow: '<div type="button" class="stock-slick-next"></div>',
         arrows: true,
-        dotsClass: 'stock-dots',
         responsive: [
             {
                 breakpoint: 940,
@@ -75,5 +74,14 @@ return
         $("#news-slider").show();
     }
 }
-})
+});
+    $('.bottom-slider').slick({
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        autoplay: true,
+        prevArrow: '<div type="button" class="bottom-slider-prev"></div>',
+        nextArrow: '<div type="button" class="bottom-slider-next"></div>',
+        arrows: true
+    });
 });
