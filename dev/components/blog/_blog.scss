@@ -1,0 +1,117 @@
+.blog {
+  padding: 30px 0;
+  .blog-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 29.4px;
+    color: #161616;
+    margin-bottom: 38px;
+  }
+  .blog-grig {
+    height: 395px;
+    display: grid;
+    grid-template-areas: 'item1 item2 item3 item4' 'item1 item5 item3 item6';
+    grid-template-columns: 24% 22.5% 21% 29.5%;
+    grid-column-gap: 1%;
+    grid-row-gap: 20px;
+    .blog-item {
+      box-sizing: border-box;
+      font-size: 13.72px;
+      color: #464646;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      background: center no-repeat;
+      background-size: auto 100%;
+      padding-left: 5px;
+      padding-right: 5px;
+      @include media($width-sm){
+        padding-right: 0;
+      }
+      .blog-item-title {
+        font-size: 17.64px;
+        font-weight: 500;
+        margin-bottom: 3px;
+      }
+      .blog-item-text {
+        line-height: 24px;
+        width: 85%;
+        margin-bottom: 10px;
+        overflow-y: hidden;
+        text-overflow: ellipsis;
+      }
+      .blog-item-btn {
+        text-align: center;
+        line-height: 22px;
+        border-radius: 3px;
+        color: white;
+        height: 24px;
+        width: 100%;
+        background-color: $darkgreen;
+        @include media($width-sm){
+          width: 126px;
+        }
+      }
+    }
+    .blog-item1 {
+      grid-area: item1;
+      background-image: url("img/blogdrill.png");
+      @include media($width-sm){
+        padding-left: 33px;
+      }
+      .blog-item-text {
+        height: 127px;
+      }
+    }
+    .blog-item2 {
+      grid-area: item2;
+      background-image: url("img/bloglaminate.png");
+    }
+    .blog-item3 {
+      grid-area: item3;
+      background-image: url("img/blogprimer.png");
+      @include media($width-sm){
+        padding-left: 22px;
+      }
+      .blog-item-text {
+        height: 142px;
+      }
+
+    }
+    .blog-item4 {
+      grid-area: item4;
+      background-image: url("img/blogdecking.png");
+    }
+    .blog-item5 {
+      grid-area: item5;
+      background-image: url("img/blogcement.png");
+      padding-top: 20px;
+    }
+    .blog-item6 {
+      grid-area: item6;
+      background-image: url("img/bloggips.png");
+      padding-top: 11px;
+    }
+    .blog-item1, .blog-item3 {
+      padding-top: 10px;
+    }
+    .blog-item2, .blog-item5 {
+      @include media($width-sm){
+        padding-left: 22px;
+      }
+      .blog-item-title {
+        margin-bottom: -4px;
+      }
+      .blog-item-text {
+        height: 70px;
+      }
+    }
+    .blog-item4, .blog-item6{
+      @include media($width-sm){
+        padding-left: 15px;
+      }
+      .blog-item-text{
+        height: 68px;
+      }
+    }
+  }
+}
