@@ -1,4 +1,16 @@
 $(function () {
+    //count left position of dots depending of devise width
+    function dotsLeftPosition(dotsClass, maxWidth) {
+        if ($(window).width() > maxWidth) {
+            const dotsLeftPosition = ($(window).width() - maxWidth) / 2 + "px";
+            console.log(dotsLeftPosition);
+            dotsClass.css("left", dotsLeftPosition);
+        }
+        else {
+           dotsClass.css("left", "2%");
+        }
+    }
+    //init main banner slider
     $('.banner-slider').slick({
         dots: true,
         infinite: true,
@@ -8,31 +20,25 @@ $(function () {
         arrows: false,
         dotsClass: 'banner-dots'
     });
-
-    function dotsLeftPosition() {
-        if ($(window).width() > 1336) {
-            const dotsLeftPosition = ($(window).width() - 1336) / 2 + "px";
-            console.log(dotsLeftPosition);
-            $('.banner-dots').css("left", dotsLeftPosition);
-        }
-        else {
-            $('.banner-dots').css("left", "2%");
-        }
-    }
-
-    dotsLeftPosition();
+    dotsLeftPosition($('.banner-dots'), 1336);
     $(window).resize(function () {
         dotsLeftPosition();
     });
-    $(".second-catalog .menu .menu-item").click(function (e) {
-        $(".menu-item-active").removeClass("menu-item-active");
-        $(e.target).addClass("menu-item-active");
-        const clickedMenuItem = $(e.target).attr("data-attribute");
-        $(".second-catalog .info .info-item-wrap").removeClass("info-item-wrap-active");
-        const currentInfoItem = $(".second-catalog .info div#" + clickedMenuItem);
-        currentInfoItem.addClass("info-item-wrap-active");
-    });
 
+    //tabs
+    function tabs(menuItem, menuItemActiveClass, infoItem, infoItemActiveClass) {
+        menuItem.click(function (e) {
+            $("."+menuItemActiveClass).removeClass(menuItemActiveClass);
+            $(e.target).addClass(menuItemActiveClass);
+            const clickedMenuItem = $(e.target).attr("data-attribute");
+            infoItem.removeClass(infoItemActiveClass);
+            const currentInfoItem = $(".second-catalog .info div#" + clickedMenuItem);
+            currentInfoItem.addClass(infoItemActiveClass);
+        });
+    }
+    tabs($(".second-catalog .menu .menu-item"), "menu-item-active", $(".second-catalog .info .info-item-wrap"), "info-item-wrap-active");
+
+    //init stock and news slider
     $('.stock-news-slider').slick({
         infinite: true,
         speed: 300,
@@ -60,6 +66,8 @@ $(function () {
             }
         ]
     });
+
+    //stock news panel toggle
 $(".stock-news-toggle-panel").click(function (e) {
 if($(e.target).hasClass("toggle-item-active")){
 return
@@ -75,6 +83,8 @@ return
     }
 }
 });
+
+//bottom slider init
     $('.bottom-slider').slick({
         infinite: true,
         speed: 300,

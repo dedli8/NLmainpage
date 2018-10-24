@@ -6,7 +6,7 @@
     }
     .banner-picture {
 background: no-repeat url("img/banner.png") center;
-      height: 430px;
+      height: 423px;
     }
     .banner-info{
       position: absolute;
@@ -18,12 +18,20 @@ background: no-repeat url("img/banner.png") center;
     }
     .banner-text{
       font-weight: 700;
-      font-size: 60px;
-      line-height: 61px;
+      font-size: 4.6875vw;
+      line-height: 4.765625vw;
+      @include media($width-max){
+        font-size: 60px;
+        line-height: 61px;
+      }
       span{
-        font-size: 90px;
+        font-size: 7.03125vw;
         padding-right: 13px;
-        line-height: 77px;
+        line-height: 6.015625vw;
+        @include media($width-max){
+          font-size: 90px;
+          line-height: 77px;
+        }
       }
     }
     .banner-btn{

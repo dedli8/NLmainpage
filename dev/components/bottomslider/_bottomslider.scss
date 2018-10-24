@@ -1,5 +1,5 @@
 .bottom-slider-section{
-  margin-bottom: 40px;
+  margin-bottom: 83px;
 }
 .bottom-slider{
   position: relative;
@@ -9,15 +9,29 @@
     display: block;
     width: 100%;
     height: 156px;
+    position: relative;
+    .bottom-slider-text{
+      font-size: 3.75vw;
+      text-transform: uppercase;
+      text-align: right;
+      color: white;
+      font-weight: 700;
+      position: absolute;
+      right: 21.09375%;
+      top: 40px;
+      @include media($width-max){
+        font-size: 48.02px;
+      }
+    }
   }
   .bottom-slider-item1{
-    background: center no-repeat url("img/bottomsliderpic.png");
+    background: right no-repeat url("img/bottomsliderpic.png");
   }
   .bottom-slider-item2{
-    background: center no-repeat url("img/bottomsliderpic.png");
+    background: right no-repeat url("img/bottomsliderpic.png");
   }
   .bottom-slider-item3{
-    background: center no-repeat url("img/bottomsliderpic.png");
+    background: right no-repeat url("img/bottomsliderpic.png");
   }
   .bottom-slider-prev, .bottom-slider-next{
     position: absolute;
@@ -29,7 +43,7 @@
     z-index: 1;
   }
   .bottom-slider-next{
-    right: -16px;
+    right: -17px;
     &:after{
       content: '';
       position: absolute;
@@ -43,7 +57,7 @@
     }
   }
   .bottom-slider-prev{
-    left: -16px;
+    left: -17px;
     &:after{
       content: '';
       position: absolute;
