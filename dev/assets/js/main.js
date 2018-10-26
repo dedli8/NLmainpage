@@ -22,7 +22,7 @@ $(function () {
     });
     dotsLeftPosition($('.banner-dots'), 1336);
     $(window).resize(function () {
-        dotsLeftPosition();
+        dotsLeftPosition($('.banner-dots'));
     });
 
     //tabs
