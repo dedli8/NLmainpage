@@ -7,9 +7,10 @@ $(function () {
             dotsClass.css("left", dotsLeftPosition);
         }
         else {
-           dotsClass.css("left", "2%");
+            dotsClass.css("left", "2%");
         }
     }
+
     //init main banner slider
     $('.banner-slider').slick({
         dots: true,
@@ -28,7 +29,7 @@ $(function () {
     //tabs
     function tabs(menuItem, menuItemActiveClass, infoItem, infoItemActiveClass) {
         menuItem.click(function (e) {
-            $("."+menuItemActiveClass).removeClass(menuItemActiveClass);
+            $("." + menuItemActiveClass).removeClass(menuItemActiveClass);
             $(e.target).addClass(menuItemActiveClass);
             const clickedMenuItem = $(e.target).attr("data-attribute");
             infoItem.removeClass(infoItemActiveClass);
@@ -36,6 +37,7 @@ $(function () {
             currentInfoItem.addClass(infoItemActiveClass);
         });
     }
+
     tabs($(".second-catalog .menu .menu-item"), "menu-item-active", $(".second-catalog .info .info-item-wrap"), "info-item-wrap-active");
 
     //init stock and news slider
@@ -68,21 +70,21 @@ $(function () {
     });
 
     //stock news panel toggle
-$(".stock-news-toggle-panel").click(function (e) {
-if($(e.target).hasClass("toggle-item-active")){
-return
-}else{
-    $(this).children().removeClass("toggle-item-active");
-    $(e.target).addClass("toggle-item-active");
-    if($(e.target).attr("id") == "stock-toggle"){
-        $("#news-slider").hide();
-        $("#stock-slider").show();
-    } else if($(e.target).attr("id") == "news-toggle"){
-        $("#stock-slider").hide();
-        $("#news-slider").show();
-    }
-}
-});
+    $(".stock-news-toggle-panel").click(function (e) {
+        if ($(e.target).hasClass("toggle-item-active")) {
+            return
+        } else {
+            $(this).children().removeClass("toggle-item-active");
+            $(e.target).addClass("toggle-item-active");
+            if ($(e.target).attr("id") == "stock-toggle") {
+                $("#news-slider").hide();
+                $("#stock-slider").show();
+            } else if ($(e.target).attr("id") == "news-toggle") {
+                $("#stock-slider").hide();
+                $("#news-slider").show();
+            }
+        }
+    });
 
 //bottom slider init
     $('.bottom-slider').slick({
@@ -95,3 +97,23 @@ return
         arrows: true
     });
 });
+
+//dropdown catalog menu
+$('#dropdown-catalog-toggle').mouseover(function () {
+    $('#dropdown-catalog').css({"display": "block"});
+});
+$('#dropdown-catalog').mouseleave(function () {
+    $('#dropdown-catalog').css("display", "none");
+    $('.dropdown-inner-menu').removeClass('dropdown-catalog-active-ib');
+    $('.dropdown-catalog-wrap').css({"width": "34%", 'display':'block'});
+    $('.dropdown-menu-wrap').css({'width':'100%', 'display':'block'});
+});
+$('.dropdown-menu-item a').mouseover(function (e) {
+    $('.dropdown-inner-menu').removeClass('dropdown-catalog-active-ib');
+    const currentDdItem = $(e.target).attr("data-attribute");
+    $('div#' + currentDdItem).addClass("dropdown-catalog-active-ib");
+    $('.dropdown-catalog-wrap').css({"width": "100%"});
+    $('.dropdown-menu-wrap').css({'width':'34%', 'display':'inline-block'});
+    $('.dropdown-connector').css({'width': "18%"});
+});
+

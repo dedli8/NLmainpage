@@ -1,36 +1,59 @@
-.catalog {
+.dropdown-catalog {
+  display: none;
   max-width: 1280px;
   margin: 0 auto;
   background-color: white;
-  font-size: 0;
+  position: relative;
+.dropdown-catalog-wrap{
+  position: absolute;
   padding-bottom: 10px;
+  font-size: 0;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  width: 34%;
+}
+  .dropdown-connector{
+    position: absolute;
+    width: 53%;
+    left: 0;
+    top: -70px;
+    height: 80px;
+  }
   .dropdown-menu-wrap {
-    width: 34%;
+    //display: inline-block;
+    //width: 33.3%;
     box-sizing: border-box;
-    display: inline-block;
     vertical-align: top;
-    margin-right: 2%;
+    background-color: white;
   }
   .dropdown-menu {
     font-size: 0;
     .dropdown-menu-item {
       a {
-        padding: 15px 0 15px 102px;
+        padding: 9px 0 9px 102px;
         display: block;
         font-weight: 500;
         font-size: 14px;
         color: #5a5a5a;
         cursor: pointer;
+        height: 33px;
+        box-sizing: border-box;
         &:hover{
           border-bottom: 1px solid $green;
         }
       }
     }
   }
+
   .dropdown-inner-menu {
-    padding-top: 15px;
-    width: 64%;
-    display: inline-block;
+    padding-top: 9px;
+    background-color: white;
+    width: 66%;
+    padding-left: 2.8%;
+    box-sizing: border-box;
+    //display: none;
     vertical-align: top;
     .inner-menu {
       font-size: 0;
@@ -40,12 +63,13 @@
         color: #5a5a5a;
         display: inline-block;
         vertical-align: top;
-        width: 199px;
-        margin-bottom: 25px;
+        width: 197px;
+        margin-bottom: 22px;
       >a{
         margin-bottom: 7px;
         height: 16px;
         box-sizing: border-box;
+        cursor: pointer;
         &:hover{
           color: #238b5c;
           border-bottom: 1px #238b5c solid;
@@ -54,7 +78,7 @@
         .inner-submenu {
           font-size: 0;
           .submenu-item {
-            margin-bottom: 5px;
+            margin-bottom: 2px;
             a {
               height: 15px;
               box-sizing: border-box;
@@ -79,5 +103,11 @@
         }
       }
     }
+  }
+  .dropdown-catalog-active{
+    display: block;
+  }
+  .dropdown-catalog-active-ib{
+    display: inline-block;
   }
 }
