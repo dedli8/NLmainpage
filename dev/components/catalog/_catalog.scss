@@ -53,7 +53,7 @@
     width: 66%;
     padding-left: 2.8%;
     box-sizing: border-box;
-    //display: none;
+    display: none;
     vertical-align: top;
     .inner-menu {
       font-size: 0;
@@ -61,9 +61,6 @@
         font-size: 14px;
         font-weight: 500;
         color: #5a5a5a;
-        display: inline-block;
-        vertical-align: top;
-        width: 197px;
         margin-bottom: 22px;
       >a{
         margin-bottom: 7px;
