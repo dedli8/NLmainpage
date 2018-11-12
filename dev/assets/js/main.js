@@ -11,6 +11,12 @@ $(function () {
         }
     }
 
+    //languge panel
+    $('.language-panel-item').click(function (e) {
+        $('.language-panel-item').removeClass('language-panel-item-active');
+        $(e.target).addClass('language-panel-item-active');
+    });
+
     //init main banner slider
     $('.banner-slider').slick({
         dots: true,
@@ -26,19 +32,63 @@ $(function () {
         dotsLeftPosition($('.banner-dots'));
     });
 
-    //tabs
-    function tabs(menuItem, menuItemActiveClass, infoItem, infoItemActiveClass) {
+    //second catalog slider
+    $('.second-catalog-slider').slick({
+        // infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
+        autoplay: false,
+        arrows: true,
+        prevArrow: '<div type="button" class="second-catalog-slick-prev"></div>',
+        nextArrow: '<div type="button" class="second-catalog-slick-next"></div>',
+        // responsive: [
+        //     {
+        //         breakpoint: 940,
+        //         settings: {
+        //             slidesToShow: 3,
+        //             slidesToScroll: 3,
+        //         }
+        //     },
+        //     {
+        //         breakpoint: 768,
+        //         settings: {
+        //             slidesToShow: 2,
+        //             slidesToScroll: 2
+        //         }
+        //     }
+        // ]
+    });
+
+
+    // tabs
+    function tabs(menuItem, catalogSliderItemActive) {
         menuItem.click(function (e) {
-            $("." + menuItemActiveClass).removeClass(menuItemActiveClass);
-            $(e.target).addClass(menuItemActiveClass);
-            const clickedMenuItem = $(e.target).attr("data-attribute");
-            infoItem.removeClass(infoItemActiveClass);
-            const currentInfoItem = $(".second-catalog .info div#" + clickedMenuItem);
-            currentInfoItem.addClass(infoItemActiveClass);
+            // console.log(slickCurrentSlide());
+            $("." + catalogSliderItemActive).removeClass(catalogSliderItemActive);
+            $(e.target).parent().addClass(catalogSliderItemActive);
+            // console.log((menuItem.length-1)/2);
+            // if (dataSlickIndex==0){
+            //     console.log("Yes");
+            // }
+            // while(dataSlickIndex!="0"){
+            $('.second-catalog-slider').slick("slickNext");
+            let dataSlickIndex = $(e.target).parent(".catalog-slider-item").attr('tabindex');
+                $('.second-catalog-slick-next').click( function () {
+                    dataSlickIndex = $(e.target).parent(".catalog-slider-item").attr('tabindex');
+                    console.log(dataSlickIndex);
+                });
+            const dataIndex = $(e.target).parent(".catalog-slider-item").attr('data-index');
+            console.log(dataIndex);
+            console.log($('.second-catalog-slider').slick('slickCurrentSlide'));
+            // $('.second-catalog-slider').slick('slickGoTo', 3);
+                // dataSlickIndex = $(e.target).parent(".catalog-slider-item").attr('tabindex');
+                // console.log(dataSlickIndex);
+                // console.log(dataSlickIndex);
+            // }
         });
     }
-
-    tabs($(".second-catalog .menu .menu-item"), "menu-item-active", $(".second-catalog .info .info-item-wrap"), "info-item-wrap-active");
+    tabs($(".second-catalog .menu-item"), "catalog-slider-item-active");
 
     //init stock and news slider
     $('.stock-news-slider').slick({

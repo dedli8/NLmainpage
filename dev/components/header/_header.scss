@@ -5,23 +5,23 @@
     align-items: center;
     grid-row-gap: 20px;
     grid-template-areas: 'logo logo logo logo singin singin city city'
-    'logo logo logo logo favbas favbas favbas  favbas'
+    'logo logo logo logo favbas favbas language language'
     'navmenu navmenu navmenu navmenu navmenu navmenu navmenu navmenu'
     'search search search search search contacts contacts contacts';
     @include media($width-xs){
-      grid-template-areas: 'logo logo singin singin city city favbas  favbas'
+      grid-template-areas: 'logo logo singin singin city city city language'
       'navmenu navmenu navmenu navmenu navmenu navmenu navmenu navmenu'
-      'search search search search search contacts contacts contacts';
+      'search search search search search contacts contacts favbas';
       align-items: flex-end;
     }
     @include media($width-sm) {
       grid-template-areas: 'logo logo logo contacts contacts favbas singin city'
       'logo logo logo navmenu navmenu navmenu navmenu navmenu'
-      'search search search search search search search search';
+      'search search search search search search search language';
     }
     @include media($width-mid){
       grid-template-areas: 'logo city navmenu navmenu navmenu navmenu navmenu singin'
-      'logo search search search contacts contacts contacts favbas';
+      'logo search search search contacts contacts language favbas';
     }
     @include media($width-max){
       grid-row-gap: 0px;
@@ -116,8 +116,31 @@
   }
   .contacts>*{
     border-bottom: 1px solid #76797c;
-    @include media($width-max) {
-
+  }
+  .language-panel{
+    grid-area: language;
+    @include media($width-xs){
+      align-self: flex-end;
+    }
+    @include media($width-sm){
+      text-align: center;
+    }
+    @include media($width-mid){
+      align-self: center;
+    }
+    .language-panel-item{
+      display: inline-block;
+      font-size: 16px;
+      color: #848789;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:first-child{
+        margin-right: 15px;
+      }
+    }
+    .language-panel-item-active{
+      color: #007742;
+      border-bottom: 1px solid #007742;
     }
   }
   .fav-bas-box>*{

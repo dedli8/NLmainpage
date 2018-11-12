@@ -1,0 +1,201 @@
+.second-catalog{
+  margin-top: 37px;
+  font-size: 0;
+  .menu {
+    font-size: 0;
+    border: 2px solid #a7a7a7;
+    border-bottom: none;
+    height: 35px;
+    @include media($width-sm) {
+      height: 50px;
+    }
+    @include media($width-mid) {
+      height: 70px;
+    }
+    .menu-item {
+      padding-left: 10px;
+      font-size: 10px;
+      padding-top: 10px;
+      height: 35px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 22.91666666666667%;
+      color: #a7a7a7;
+      text-align: center;
+      box-sizing: border-box;
+      border-bottom: 3px solid $green;
+      text-transform: capitalize;
+      @include media($width-sm) {
+        padding-left: 15px;
+        padding-top: 15px;
+        font-size: 16px;
+        height: 100%;
+      }
+      @include media($width-mid) {
+        padding-left: 19px;
+        padding-top: 20px;
+        font-size: 23.52px;
+        height: 100%;
+      }
+    }
+    .menu-item-active{
+      padding-left: 0;
+      height: 38px;
+      position: relative;
+      top: -2px;
+      width: 31.25%;
+      background-color: $green;
+font-size: 14px;
+      color: white;
+      text-transform: uppercase;
+    @include media($width-sm) {
+      font-size: 20px;
+      height: 54px;
+    }
+      @include media($width-mid) {
+        font-size: 28.53px;
+        height: 74px;
+      }
+    }
+  }
+.info{
+  font-size: 0;
+  .info-item-wrap{
+    padding-left: 12px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 22.91666666666667%;
+    @include media($width-sm){
+      padding-left: 17px;
+    }
+    @include media($width-mid){
+      padding-left: 25px;
+    }
+  }
+  .info-item-btn-active {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    display: none;
+    @include media($width-mid){
+      bottom: 27px;
+      left: 27px;
+    }
+  }
+  .info-item-wrap-active{
+    width: 31.25%;
+    padding-left: 0;
+    .info-item-text{
+      display: none;
+    }
+    .info-item-btn{
+      display: none;
+    }
+    .info-item-btn-active{
+      display: block;
+      div:first-child{
+        width: 75%;
+        font-weight: 700;
+        font-size: 25px;
+        color: white;
+        line-height: 20px;
+        margin-bottom: 6px;
+        @include media($width-mid){
+          font-size: 49px;
+          line-height: 40px;
+        }
+      }
+      div:last-child{
+        font-size: 20px;
+        color: $green;
+        @include media($width-mid){
+          font-size: 37.24px;
+        }
+      }
+    }
+  }
+  .info-item{
+    position: relative;
+    height: 250px;
+    background: white center no-repeat content-box;
+    background-size: auto 250px;
+    padding-top: 2px;
+    @include media($width-sm){
+        height: 300px;
+        background-size: auto 300px;
+      }
+    @include media($width-mid){
+      height: 494px;
+      background-size: auto 494px;
+    }
+    .info-item-text {
+      position: absolute;
+      left: 5%;
+      top: 35px;
+      color: white;
+      @include media($width-sm){
+        left: 17px;
+      }
+      @include media($width-mid){
+        left: 26px;
+      }
+      .info-item-title {
+font-weight: 500;
+        font-size: 17px;
+        line-height: 18px;
+        @include media($width-sm){
+          font-size: 25px;
+          line-height: 26px;
+        }
+        @include media($width-mid){
+          font-size: 35px;
+          line-height: 37px;
+        }
+      }
+      .info-item-descr{
+        font-size: 12px;
+        @include media($width-sm){
+          font-size: 14px;
+        }
+        @include media($width-mid){
+          font-size: 18px;
+        }
+      }
+    }
+    .info-item-btn{
+      cursor: initial;
+      height: 68px;
+      width: 100%;
+      position: absolute;
+      background-color: $green;
+      color: white;
+      bottom: 30px;
+      font-size: 14px;
+      @include media($width-sm){
+        bottom: 50px;
+        font-size: 14px;
+      }
+      @include media($width-mid){
+        bottom: 86px;
+        font-size: 18.62px;
+      }
+      a{
+        border-bottom: 1px solid white;
+        cursor: pointer;
+      }
+    }
+  }
+  .tile{
+  background-image: url("img/tile.png");
+  }
+  .laminate{
+    background-image: url("img/laminate.png");
+  }
+  .plumbing{
+    background-image: url("img/plumbing.png");
+  }
+  .wallpaper{
+    background-image: url("img/wallpaper.png");
+  }
+}
+}
