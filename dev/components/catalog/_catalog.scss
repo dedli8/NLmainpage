@@ -12,7 +12,7 @@
   top: 0;
   z-index: 1;
   background-color: white;
-  width: 34%;
+  width: 25%;
 }
   .dropdown-connector{
     position: absolute;
@@ -24,6 +24,7 @@
   .dropdown-menu-wrap {
     //display: inline-block;
     //width: 33.3%;
+    padding-left: 102px;
     box-sizing: border-box;
     vertical-align: top;
     background-color: white;
@@ -32,8 +33,8 @@
     font-size: 0;
     .dropdown-menu-item {
       a {
-        padding: 9px 0 9px 102px;
-        display: block;
+        padding: 9px 0;
+        display: inline-block;
         font-weight: 500;
         font-size: 14px;
         color: #5a5a5a;
@@ -50,8 +51,8 @@
   .dropdown-inner-menu {
     padding-top: 9px;
     background-color: white;
-    width: 66%;
-    padding-left: 2.8%;
+    width: 75%;
+    padding-left: 8.2%;
     box-sizing: border-box;
     display: none;
     vertical-align: top;

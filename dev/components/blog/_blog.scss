@@ -22,10 +22,14 @@
       overflow: hidden;
       background: center no-repeat;
       background-size: auto 100%;
-      padding-left: 5px;
       padding-right: 5px;
       @include media($width-sm){
         padding-right: 0;
+      }
+      .blog_item_wrap{
+        padding-left: 5px;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 0px 30px 40px rgba(255,255,255,0.9);
       }
       .blog-item-title {
         font-size: 17.64px;
@@ -40,6 +44,7 @@
         text-overflow: ellipsis;
       }
       .blog-item-btn {
+        margin-left: 5px;
         text-align: center;
         line-height: 22px;
         border-radius: 3px;
@@ -55,8 +60,14 @@
     .blog-item1 {
       grid-area: item1;
       background-image: url("img/blogdrill.png");
-      @include media($width-sm){
-        padding-left: 33px;
+      .blog_item_wrap{
+        @include media($width-sm){
+        padding-left: 33px; }
+      }
+      .blog-item-btn {
+        @include media($width-sm) {
+          margin-left: 33px;
+        }
       }
       .blog-item-text {
         height: 127px;
@@ -69,8 +80,15 @@
     .blog-item3 {
       grid-area: item3;
       background-image: url("img/blogprimer.png");
-      @include media($width-sm){
-        padding-left: 22px;
+      .blog_item_wrap {
+        @include media($width-sm) {
+          padding-left: 22px;
+        }
+      }
+      .blog-item-btn {
+        @include media($width-sm) {
+          margin-left: 22px;
+        }
       }
       .blog-item-text {
         height: 142px;
@@ -95,8 +113,15 @@
       padding-top: 10px;
     }
     .blog-item2, .blog-item5 {
-      @include media($width-sm){
-        padding-left: 22px;
+      .blog_item_wrap {
+        @include media($width-sm) {
+          padding-left: 22px;
+        }
+      }
+      .blog-item-btn {
+        @include media($width-sm) {
+         margin-left: 22px;
+        }
       }
       .blog-item-title {
         margin-bottom: -4px;
@@ -106,8 +131,15 @@
       }
     }
     .blog-item4, .blog-item6{
-      @include media($width-sm){
-        padding-left: 15px;
+      .blog_item_wrap {
+        @include media($width-sm) {
+          padding-left: 15px;
+        }
+      }
+      .blog-item-btn {
+        @include media($width-sm) {
+          margin-left: 15px;
+        }
       }
       .blog-item-text{
         height: 68px;

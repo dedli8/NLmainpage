@@ -12,7 +12,7 @@ gulp.task('server', function(){
     connect.server({
         root: 'build/',
         livereload: true,
-        port: 3000
+        port: 4000
     });
 });
 
@@ -64,10 +64,7 @@ gulp.task('sprite', function(){
 });
 gulp.task('pref', () =>
 gulp.src('build/styles.css')
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
+    .pipe(autoprefixer({ grid: true, browsers: ['>1%']  }))
     .pipe(gulp.dest('build'))
 );
 

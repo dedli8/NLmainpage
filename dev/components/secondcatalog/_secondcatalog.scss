@@ -4,15 +4,20 @@
   .second-catalog-slider{
     text-align: center;
     position: relative;
+    border-bottom: 2px solid #ededed;
+    border-right: 2px solid #ededed;
   }
   .catalog-slider-item {
    font-size: 0;
     width: 293.3333333333333px;
     display: inline-block;
     vertical-align: top;
+    &:focus{
+      outline: none;
+    }
     .menu-item {
       height: 35px;
-      border-top: 2px solid #a7a7a7;
+      border-top: 2px solid #ededed;
       border-bottom: 3px solid $green;
       padding-left: 10px;
       font-size: 10px;
@@ -36,6 +41,7 @@
     }
   }
   .info-item-wrap{
+    position: relative;
     padding-left: 12px;
     box-sizing: border-box;
     @include media($width-sm){
@@ -188,12 +194,94 @@ font-weight: 500;
     background-image: url("img/wallpaper.png");
   }
 }
-.second-catalog-slick-next{
-  //display: none;
-position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  left: 0;
-  top: 0;
+.inner-slider-box{
+  padding: 18px 40px 18px 45px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 880px;
+  right: -882px;
+  background-color: white;
+  height: 100%;
+  z-index: 1100;
+  display: none;
+  .header{
+    background-color: #a9d3c0;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 7px 3px 40px;
+    .text-box {
+      padding-top: 10px;
+      width: 270px;
+      text-align: left;
+      .text {
+        text-transform: uppercase;
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+        &:first-child{
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+  .inner-slider{
+    padding-top: 25px;
+    //.slick-list{
+    //  padding: 0 !important;
+    //  text-align: center;
+    //}
+    .item {
+      @include media($width-max) {
+        width: 206px;
+        margin-right: 88px;
+      }
+      &:nth-child(3n+3){
+        @include media($width-max) {
+          margin-right: 0;
+        }
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .picture{
+      display: block;
+      margin: 0 auto 8px auto;
+    }
+ .name{
+   font-size: 12px;
+   color: #7e7e7e;
+   text-align: left;
+   margin-bottom: 28px;
+ }
+    .price-btn-wrap{
+      text-align: left;
+    }
+    .price-box{
+      margin-right: 16px;
+      display: inline-block;
+      vertical-align: bottom;
+      text-align: left;
+      font-weight: 500;
+      font-size: 14px;
+      color: #7e7e7e;
+      div:first-child{
+        color: #ed3457;
+      }
+    }
+    .btn{
+      display: inline-block;
+      vertical-align: bottom;
+      width: 85px;
+      height: 23px;
+      background-color: $darkgreen;
+      color: white;
+      text-align: center;
+      line-height: 20px;
+      font-size: 10.79px;
+      font-weight: 500;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+  }
 }
