@@ -1,0 +1,65 @@
+.nl-cities {
+  position: relative;
+align-self: start;
+  width: 180px;
+  .selected-city {
+    padding-left: 25px;
+    font-size: 16px;
+    color: #76797c;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: '';
+      width: 13px;
+      height: 17px;
+      position: absolute;
+      left: 0;
+      top: 4px;
+      z-index: 1;
+      background-size: cover;
+      background: url("img/pinicon.png") no-repeat;
+    }
+    .address{
+      font-size: 11px;
+    }
+  }
+  .cities-dropdown {
+    box-shadow: 1px 2px 1px 0px rgba(0, 0, 0, 0.06);
+    display: none;
+    color: #76797c;
+    padding: 5px 0 18px 0;
+
+    background-color: white;
+    position: absolute;
+    top: 33px;
+    left: 0;
+    font-size: 0;
+    width: 250px;
+    z-index: 1;
+    .cities-dropdown-item {
+      padding: 0 10px 5px 20px;
+      margin-bottom: 2px;
+      cursor: pointer;
+.city{
+  font-size: 12px;
+}
+      .address{
+        font-size: 10px;
+      }
+    }
+    .cities-dropdown-item-active {
+      color: $darkgreen;
+      border-bottom: 1px solid $darkgreen;
+      position: relative;
+      &:after {
+        bottom: 5px;
+        content: '';
+        width: 12px;
+        height: 18px;
+        position: absolute;
+        right: 10px;
+        background: url("img/pinicongreen.png") no-repeat;
+      }
+    }
+  }
+}
